@@ -17,7 +17,7 @@ export const POST: RequestHandler = async ({ request }) => {
 				'Authorization': `Bearer ${VITE_CHAT_API_KEY}`
 			},
 			body: JSON.stringify({
-				model: 'gpt-4',
+				model: 'gpt-4.1',
 				messages: [
 					{
 						role: 'system',
