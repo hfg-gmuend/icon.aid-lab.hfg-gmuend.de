@@ -10,7 +10,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			return json({ error: 'Icon name is required' }, { status: 400 });
 		}
 
-		const response = await fetch('https://api.openai.com/v1/chat/completions', {
+		const response = await fetch('https://aid-playground.hfg-gmuend.de/api-llm/v1/chat/completions', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
