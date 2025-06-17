@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import { generateIconSvg } from '$lib/iconGenerator';
 	
 	let iconName = '';
 	let generatedSvg = '';
@@ -17,20 +18,12 @@
 		generatedSvg = '';
 
 		try {
-			const response = await fetch('/api/generate-icon', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ iconName: iconName.trim() })
-			});
+			const result = await generateIconSvg(iconName.trim());
 
-			const data = await response.json();
-
-			if (response.ok) {
-				generatedSvg = data.svg;
+			if (result.svg) {
+				generatedSvg = result.svg;
 			} else {
-				error = data.error || 'Fehler beim Generieren des Icons';
+				error = result.error || 'Fehler beim Generieren des Icons';
 			}
 		} catch (err) {
 			error = 'Netzwerkfehler beim Generieren des Icons';

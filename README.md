@@ -1,20 +1,47 @@
-# sv
+# Future Icon Generator
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-go
-## Creating a project
+An AI-powered SVG icon generator built with SvelteKit, configured for deployment on GitHub Pages.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
+
+- Generate custom SVG icons using AI
+- Clean, minimalist black and white design
+- Download generated icons as SVG files
+- Fully static deployment compatible with GitHub Pages
+
+## GitHub Pages Deployment
+
+This project is configured to deploy automatically to GitHub Pages using GitHub Actions.
+
+### Setup Instructions
+
+1. **Set up the repository secret:**
+   - Go to your GitHub repository settings
+   - Navigate to "Secrets and variables" → "Actions"
+   - Add a new repository secret named `VITE_CHAT_API_KEY`
+   - Set the value to your API key for the icon generation service
+
+2. **Enable GitHub Pages:**
+   - Go to repository Settings → Pages
+   - Set Source to "GitHub Actions"
+
+3. **Deploy:**
+   - Push to the main branch to trigger automatic deployment
+   - The site will be available at `https://yourusername.github.io/repositoryname`
+
+### Manual Deployment
+
+If you prefer to deploy manually:
 
 ```bash
-# create a new project in the current directory
-npx sv create
+# Build for GitHub Pages
+npm run build:gh-pages
 
-# create a new project in my-app
-npx sv create my-app
+# The built files will be in the 'build' directory
+# Upload these files to your GitHub Pages branch
 ```
 
-## Developing
+## Local Development
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 

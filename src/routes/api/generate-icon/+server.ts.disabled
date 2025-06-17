@@ -1,0 +1,2 @@
+// API routes cannot be prerendered for static deployment
+export const prerender = false;
