@@ -8,7 +8,7 @@ export async function generateIconSvg(iconName: string): Promise<{ svg?: string;
 			return { error: 'API key not configured. Please check your environment variables.' };
 		}
 
-		const response = await fetch('https://aid-playground.hfg-gmuend.de/api-llm/v1/chat/completions', {
+		const response = await fetch('https://playground.transferscope.org/api-llm/v1/chat/completions', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
