@@ -35,7 +35,10 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
           VITE_CHAT_API_KEY: ${{ secrets.VITE_CHAT_API_KEY }}
           NODE_ENV: production
-        run: npm run build
+        run: |
+          echo "Building with BASE_PATH: $BASE_PATH"
+          echo "VITE_CHAT_API_KEY is set: $([[ -n "$VITE_CHAT_API_KEY" ]] && echo "YES" || echo "NO")"
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

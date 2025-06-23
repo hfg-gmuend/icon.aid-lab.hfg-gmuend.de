@@ -1,11 +1,18 @@
 // Client-side API utility for icon generation
 export async function generateIconSvg(iconName: string): Promise<{ svg?: string; error?: string }> {
 	try {
+		const apiKey = import.meta.env.VITE_CHAT_API_KEY;
+		
+		if (!apiKey) {
+			console.error('VITE_CHAT_API_KEY is not configured');
+			return { error: 'API key not configured. Please check your environment variables.' };
+		}
+
 		const response = await fetch('https://aid-playground.hfg-gmuend.de/api-llm/v1/chat/completions', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': `Bearer ${import.meta.env.VITE_CHAT_API_KEY}`
+				'Authorization': `Bearer ${apiKey}`
 			},
 			body: JSON.stringify({
 				model: 'gpt-4.1',
