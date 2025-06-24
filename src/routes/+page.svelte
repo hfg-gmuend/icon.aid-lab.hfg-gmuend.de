@@ -9,7 +9,7 @@
 
 	async function generateIcon() {
 		if (!iconName.trim()) {
-			error = 'Bitte gib einen Icon-Namen ein';
+			error = 'Please enter an icon name';
 			return;
 		}
 
@@ -23,10 +23,10 @@
 			if (result.svg) {
 				generatedSvg = result.svg;
 			} else {
-				error = result.error || 'Fehler beim Generieren des Icons';
+				error = result.error || 'Error generating icon';
 			}
 		} catch (err) {
-			error = 'Netzwerkfehler beim Generieren des Icons';
+			error = 'Network error while generating icon';
 			console.error('Error:', err);
 		} finally {
 			isLoading = false;
@@ -61,22 +61,22 @@
 <main class="container">
 	<div class="header">
 		<h1 class="title cyber-glow">
-			<span class="accent-text">Future</span>Icon
+			<span class="accent-text">HfG AI-</span>Icon
 		</h1>
 		<p class="subtitle">
-			KI-gestützte SVG Icon Generierung für die Zukunft
+			AI-powered SVG Icon Generation for the Future
 		</p>
 	</div>
 
 	<div class="generator-panel glass-panel fade-in">
 		<div class="input-section">
 			<div class="input-group">
-				<label for="icon-input" class="input-label">Icon Name eingeben</label>
+				<label for="icon-input" class="input-label">Enter Icon Name</label>
 				<input
 					id="icon-input"
 					type="text"
 					bind:value={iconName}
-					placeholder="z.B. home, user, search, arrow..."
+					placeholder="e.g. home, user, search, arrow..."
 					class="cyber-input"
 					onkeydown={handleKeydown}
 					disabled={isLoading}
@@ -90,10 +90,9 @@
 			>
 				{#if isLoading}
 					<span class="loading-animation"></span>
-					Generiere Icon...
+					Generating Icon...
 				{:else}
-					<span class="btn-icon">⚡</span>
-					Icon Generieren
+					Generate Icon
 				{/if}
 			</button>
 		</div>
@@ -107,7 +106,7 @@
 
 		{#if generatedSvg}
 			<div class="output-section fade-in">
-				<h3 class="output-title">Generiertes Icon</h3>
+				<h3 class="output-title">Generated Icon</h3>
 				
 				<div class="icon-preview cyber-glow">
 					<div class="icon-display">
@@ -117,8 +116,7 @@
 
 				<div class="actions">
 					<button class="cyber-button download-btn" onclick={downloadSvg}>
-						<span class="btn-icon">⬇️</span>
-						SVG Download
+						Download SVG
 					</button>
 				</div>
 
@@ -151,6 +149,7 @@
 	}
 
 	.title {
+		font-family: 'IBM Plex Mono', monospace;
 		font-size: 4rem;
 		font-weight: 700;
 		margin-bottom: 1rem;
@@ -210,7 +209,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		background: linear-gradient(135deg, var(--accent), #00cc6a);
+		background: linear-gradient(135deg, var(--accent), #e6d624);
 		border: none;
 		color: var(--bg-primary);
 		font-weight: 600;
@@ -218,7 +217,7 @@
 
 	.generate-btn:hover {
 		transform: translateY(-3px);
-		box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+		box-shadow: 0 15px 40px rgba(252, 234, 43, 0.4);
 	}
 
 	.generate-btn.loading {
@@ -248,6 +247,7 @@
 	}
 
 	.output-title {
+		font-family: 'IBM Plex Mono', monospace;
 		font-size: 1.5rem;
 		margin-bottom: 1.5rem;
 		color: var(--accent);
@@ -286,10 +286,16 @@
 	}
 
 	.download-btn {
-		background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+		background: linear-gradient(135deg, var(--accent), #e6d624);
+		color: var(--bg-primary);
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		font-weight: 600;
+	}
+
+	.download-btn:hover {
+		box-shadow: 0 10px 30px rgba(252, 234, 43, 0.3);
 	}
 
 	.code-section {
@@ -297,6 +303,7 @@
 	}
 
 	.code-title {
+		font-family: 'IBM Plex Mono', monospace;
 		font-size: 1.1rem;
 		margin-bottom: 1rem;
 		color: var(--text-secondary);
