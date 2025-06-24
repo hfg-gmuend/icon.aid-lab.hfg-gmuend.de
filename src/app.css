@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
 	--bg-primary: #0a0a0a;
@@ -19,7 +19,7 @@
 }
 
 body {
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Inter', sans-serif;
 	background: var(--bg-primary);
 	color: var(--text-primary);
 	min-height: 100vh;
@@ -51,7 +51,7 @@ body {
 	color: var(--text-primary);
 	padding: 1rem 2rem;
 	border-radius: 8px;
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: 500;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -90,7 +90,7 @@ body {
 	color: var(--text-primary);
 	padding: 1rem;
 	border-radius: 8px;
-	font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 1rem;
 	transition: all 0.3s ease;
 	backdrop-filter: blur(10px);
