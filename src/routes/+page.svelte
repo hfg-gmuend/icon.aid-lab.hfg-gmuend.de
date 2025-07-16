@@ -403,11 +403,9 @@ import { base } from '$app/paths';
 		width: 100%;
 		height: auto;
 		border-radius: 12px;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
 
 	.credits-footer a:hover .credits-image {
 		transform: translateY(-2px);
-		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 	}
 </style>
