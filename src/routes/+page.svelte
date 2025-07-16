@@ -1,6 +1,7 @@
 <script lang="ts">
-	import '../app.css';
-	import { generateIconSvg } from '$lib/iconGenerator';
+import '../app.css';
+import { generateIconSvg } from '$lib/iconGenerator';
+import { base } from '$app/paths';
 	
 	let iconName = '';
 	let generatedSvg = '';
@@ -133,13 +134,13 @@
 </main>
 
 <footer class="credits-footer">
-	<a href="https://aid-lab.hfg-gmuend.de/" target="_blank" rel="noopener noreferrer">
-		<img 
-			src="/bottom-credits.png" 
-			alt="Credits" 
-			class="credits-image"
-		/>
-	</a>
+   <a href="https://aid-lab.hfg-gmuend.de/" target="_blank" rel="noopener noreferrer">
+	   <img 
+		   src="{base}/bottom-credits.png"
+		   alt="Credits" 
+		   class="credits-image"
+	   />
+   </a>
 </footer>
 </div>
 
