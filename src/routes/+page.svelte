@@ -58,7 +58,8 @@
 
 <div class="cyber-grid"></div>
 
-<main class="container">
+<div class="page-wrapper">
+	<main class="container">
 	<div class="header">
 		<h1 class="title cyber-glow">
 			<span class="accent-text">HfG AI-</span>Icon
@@ -131,9 +132,26 @@
 	</div>
 </main>
 
+<footer class="credits-footer">
+	<a href="https://aid-lab.hfg-gmuend.de/" target="_blank" rel="noopener noreferrer">
+		<img 
+			src="/bottom-credits.png" 
+			alt="Credits" 
+			class="credits-image"
+		/>
+	</a>
+</footer>
+</div>
+
 <style>
-	.container {
+	.page-wrapper {
 		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container {
+		flex: 1;
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
@@ -223,10 +241,6 @@
 	.generate-btn.loading {
 		opacity: 0.7;
 		cursor: not-allowed;
-	}
-
-	.btn-icon {
-		font-size: 1.2rem;
 	}
 
 	.error-message {
@@ -354,5 +368,45 @@
 			width: 48px;
 			height: 48px;
 		}
+
+		.credits-footer {
+			padding: 1.5rem 1rem;
+		}
+
+		.credits-image {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	/* Footer Styles */
+	.credits-footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+		margin-top: 4rem;
+		background: rgba(255, 255, 255, 1);
+		border-top: 1px solid var(--border);
+	}
+
+	.credits-footer a {
+		display: block;
+		max-width: 600px;
+		width: 100%;
+		text-decoration: none;
+	}
+
+	.credits-image {
+		max-width: 100%;
+		width: 100%;
+		height: auto;
+		border-radius: 12px;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.credits-footer a:hover .credits-image {
+		transform: translateY(-2px);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 	}
 </style>
